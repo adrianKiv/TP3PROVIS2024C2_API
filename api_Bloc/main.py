@@ -273,10 +273,9 @@ product_data = {"data":[
 async def get_product():
     return product_data
 
-
 @app.get("/detil_product/{product_id}", response_model=Product)
-async def get_umkm_detail(product_id: str):
+async def get_product_detail(product_id: str):
     for product in product_data["data"]:
         if product["id"] == product_id:
             return product
-    return {"message": "UMKM not found"}
+    return {"message": "product not found"}
